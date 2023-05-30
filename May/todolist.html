@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script>
+      
+        function add() {
+              var newa = document.getElementById('adding').value;
+            const addingplace = document.getElementById('place');
+            var ul = document.createElement('ul');
+            ul.innerText=newa;
+           
+            addingplace.appendChild(ul);
+            ul.addEventListener('click',function(){
+                ul.style.textDecoration="line-through";
+
+            })
+            ul.addEventListener('dblclick', function () {
+                addingplace.removeChild(ul);
+
+            })
+
+
+            }
+        function remove(){
+                        const addingplace = document.getElementById('place');
+            const tagCollection = addingplace.getElementsByTagName('ul');
+            const lastTag = tagCollection[tagCollection.length - 1];
+
+            if (lastTag) {
+                lastTag.parentNode.removeChild(lastTag);
+            }
+        }
+      
+    </script>
+</head>
+<body>
+    <p><input type="text" id="adding"></input>
+        <button onclick="add()">ADD</button>
+        <button onclick="remove()">Removee</button>
+    </p>    
+    <list id = "place">
+    </list>
+</body>
+</html>

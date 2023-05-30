@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <style>
+        body {
+            background-color: rgb(72, 36, 134);
+            display: flex;
+            flex-direction: row;
+            height: 100%;
+            width: 100%;
+            margin-top: 20vh;
+            justify-content: center;
+            align-items: center;
+            align-self: center;
+            overflow: hidden;
+        }
+
+        .controls {
+            height: 35rem;
+            width: 25rem;
+            overflow: hidden;
+            border-radius: 30px;
+            background-color: rgb(230, 220, 220);
+               box-shadow: 8px 8px 100px rgba(0, 0, 0, 0.8);
+             display: flex;
+             flex-direction: column; 
+                  align-items: center;
+         justify-content: center;   
+      
+            
+        }
+        .controlcol{
+         padding: 10%;
+         margin: 20px;
+    
+        }
+
+        .audio-player {
+
+            width: 200px;
+        }
+
+        .seek-bar {
+            width: 60%;
+            height: 10px;
+            background-color: #ccc;
+            cursor: pointer;
+
+
+        }
+
+        .seek-bar-fill {
+            height: 100%;
+            background-color: #000;
+           width: 0;
+        }
+        button {
+            background-color: transparent;
+             border: none;
+        }
+        .controlcol .bottombuttons{
+    
+            font-size: larger;
+          
+            margin: 20;
+         
+        
+        }
+        .cover{
+            height: 35%;
+            width: 60%;
+            text-align: center;
+            font-size: xx-large;
+        }
+        .cover img{
+            height: 90%;
+            width: 100%;
+        }
+
+    </style>
+    
+</head>
+
+<body>
+    <div class="controls">
+        <section class="controlcol cover"><img src="https://m.media-amazon.com/images/M/MV5BZTc4OTQ1ZWItMDY1Yi00OTI5LTgyZjEtMjBkNmE5OTI3Zjg1XkEyXkFqcGdeQXVyNTA1NDY3NzY@._V1_.jpg" >Let It Happen</section>
+        <audio id="music" controls src="music.mp3" class="audio-player" style="display: none;"></audio>
+        <div class="seek-bar">
+            <div class="seek-bar-fill"></div>
+        </div>
+        <section class = "controlcol">
+                    <button onclick="playAgain()" class="bottombuttons">⟳</button>
+        <button class = "bottombuttons" >⏮</button>
+        <button onclick="playMusic()" id="playpause" style="font-size: xx-large;">▶</button>
+        <button class = "bottombuttons"> ⏭</button>
+                <button onclick="toggleHeart()" id="heart" class="bottombuttons">♡</button>
+        </section>
+
+
+    </div>
+    <script src="music.js"></script>
+</body>
+
+</html>
